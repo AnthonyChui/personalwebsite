@@ -204,16 +204,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Background Image Cycler
     const backgroundImages = [
-        'assets/images/hero-bg1.jpeg',
+        'assets/images/hero-bg.jpeg',
         'assets/images/hero-bg2.jpg',
-        'assets/images/hero-bg3.jpeg',
         'assets/images/hero-bg4.jpeg',
         'assets/images/hero-bg5.JPG',
         'assets/images/hero-bg6.jpeg',
         'assets/images/hero-bg7.JPG',
         'assets/images/hero-bg9.jpeg',
         'assets/images/hero-bg10.jpeg',
-        'assets/images/hero-bg11.JPG',
         'assets/images/hero-bg12.jpeg'
     ];
     
