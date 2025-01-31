@@ -67,98 +67,75 @@ document.addEventListener('DOMContentLoaded', () => {
         delay: 0.5
     });
 
-    // About section animations
-    gsap.from('.about-content > *', {
-        scrollTrigger: {
-            trigger: '.about-content',
-            start: 'top center+=100',
-            toggleActions: 'play none none reverse'
+    // Batch animations for better performance
+    const batchAnimations = [
+        {
+            targets: '.about-content > *',
+            vars: { x: -100 }
         },
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.3
-    });
-
-    // Project cards animation
-    gsap.from('.project-card', {
-        scrollTrigger: {
-            trigger: '.project-grid',
-            start: 'top center+=100',
-            toggleActions: 'play none none reverse'
+        {
+            targets: '.project-card',
+            vars: { y: 100 }
         },
-        y: 100,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2
-    });
-
-    // Experience items animation
-    gsap.from('.experience-item', {
-        scrollTrigger: {
-            trigger: '#experience',
-            start: 'top center+=100',
-            toggleActions: 'play none none reverse'
+        {
+            targets: '.experience-item',
+            vars: { x: 100 }
         },
-        x: 100,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.3
-    });
-
-    // Blog cards animation
-    gsap.from('.blog-card', {
-        scrollTrigger: {
-            trigger: '.blog-grid',
-            start: 'top center+=100',
-            toggleActions: 'play none none reverse'
+        {
+            targets: '.blog-card',
+            vars: { y: 50 }
         },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2
-    });
-
-    // Contact form animation
-    gsap.from('.contact-form, .contact-info', {
-        scrollTrigger: {
-            trigger: '#contact',
-            start: 'top center+=100',
-            toggleActions: 'play none none reverse'
+        {
+            targets: '.contact-form, .contact-info',
+            vars: { y: 50 }
         },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.3
-    });
+        {
+            targets: '.section-title',
+            vars: { y: 30 }
+        }
+    ];
 
-    // Section titles animation
-    gsap.utils.toArray('.section-title').forEach(title => {
-        gsap.from(title, {
-            scrollTrigger: {
-                trigger: title,
-                start: 'top center+=100',
-                toggleActions: 'play none none reverse'
-            },
-            y: 30,
-            opacity: 0,
-            duration: 0.8
-        });
-    });
-
-    // Animate sections on scroll
-    gsap.utils.toArray('section').forEach(section => {
-        gsap.from(section.children, {
-            scrollTrigger: {
-                trigger: section,
-                start: 'top center+=100',
-                toggleActions: 'play none none reverse'
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2
-        });
+    batchAnimations.forEach(animation => {
+        const elements = document.querySelectorAll(animation.targets);
+        if (elements.length) {
+            gsap.set(elements, { opacity: 0, ...animation.vars }); // Set initial state
+            
+            ScrollTrigger.batch(elements, {
+                start: "top bottom-=100",
+                onEnter: batch => gsap.to(batch, {
+                    opacity: 1,
+                    ...animation.vars,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    x: 0,
+                    y: 0,
+                    overwrite: true,
+                    ease: "power2.out"
+                }),
+                onLeave: batch => gsap.set(batch, {
+                    opacity: 0,
+                    ...animation.vars
+                }),
+                onEnterBack: batch => gsap.to(batch, {
+                    opacity: 1,
+                    ...animation.vars,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    x: 0,
+                    y: 0,
+                    overwrite: true,
+                    ease: "power2.out"
+                }),
+                onLeaveBack: batch => gsap.set(batch, {
+                    opacity: 0,
+                    ...animation.vars
+                }),
+                markers: false,
+                preventOverlaps: true,
+                fastScrollEnd: true,
+                toggleClass: "active"
+            });
+        }
     });
 
     const carousel = document.querySelector('.image-carousel');
@@ -204,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Background Image Cycler
     const backgroundImages = [
-        'assets/images/hero-bg.jpeg',
+        'assets/images/hero-bg.jpg',
         'assets/images/hero-bg2.jpg',
         'assets/images/hero-bg4.jpeg',
         'assets/images/hero-bg5.JPG',
@@ -217,6 +194,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let currentBgIndex = 0;
     const homeSection = document.getElementById('home');
+    
+    // Set initial background immediately without transition
+    homeSection.style.transition = 'none';  // Disable transition initially
+    homeSection.style.backgroundImage = `linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url('${backgroundImages[0]}')`;
+    homeSection.style.opacity = '1';
+    
+    // Re-enable transitions after initial load
+    setTimeout(() => {
+        homeSection.style.transition = 'opacity 0.3s ease';
+    }, 100);
     
     // Preload all images
     backgroundImages.forEach(src => {
