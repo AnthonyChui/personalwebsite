@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="images/chui.svg" alt="Portfolio Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="assets/Anthony_Chui_Resume.pdf" download class="resume-download">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero-content">
+            <h1>Anthony Chui</h1>
+            <p>Computer Science & Mathematics Student at UCLA</p>
+            <p class="subtitle">Passionate about technology, education, and social impact</p>
+            <a href="#contact" class="cta-button">Let's Connect</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="content">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Je Suis Chui</h2>
+                    <p>I'm Anthony Chui, or Chui. I was born in Montreal Canada to the greatest parents I could have ever asked for, and shortly after moved to Houston, Texas. I then moved to Denver, Colorado, .</p>
+                    <p>I'm now a Computer Science and Mathematics student at UCLA. I have a passion for using technology for social good and education, especially in making computer science accessible to underrepresented communities.</p>
+                    <p>I'm also very interested in machine learning and AI, as well as mathematics. This year I plan to resume participating in hackathons and math contests, and right now I'm grinding for the Putnam, trying to relive my AMC glory days.</p>
+                    <p>When I'm not coding or doing math, you can find me hanging out with my girlfriend, DJing, exploring my interests in poker, aviation, or philosophy, reading up on the latest computer science and math breakthroughs, or just having fun.</p>
+                </div>
+                <div class="skills">
+                    <h3>Technical Skills</h3>
+                    <p>Languages: C++, C, Python, JavaScript, HTML/CSS, SQL</p>
+                    <p>Frameworks: React, Express, Node.js</p>
+                    <p>Tools: PostgreSQL, NumPy, PyTorch, GitHub</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-carousel-container">
+            <button class="carousel-button prev" aria-label="Previous image">&#8592;</button>
+            <div class="image-carousel">
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/baseball.jpeg" alt="Anthony and Dad" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">This is where my love for baseball began, and my goat dad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/zion.jpeg" alt="At Zion" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">Me and some of my friends at the Narrows in Zion National Park.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/plane.jpeg" alt="Aviation Interest" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">My passion for aviation and flight began here. This is the first plane I ever flew.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/mavi.jpeg" alt="At Concert" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">Me at a mavi concert, he's been one of my favorite artists forever.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/fish.jpeg" alt="Art" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">A very interesting art exhibit I went to in Japan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/dogs.jpeg" alt="Anthony with dogs" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">Volunteering to take care of dogs!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/girlfriend2.jpeg" alt="Anthony and Girlfriend" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">My girlfriend and I at a concert! I love going to concerts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/grad.JPG" alt="Anthony at graduation" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">Me at high school graduation. I was super proud of being saltutatorian, and I'm biting my medal like I'm an olympian.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/koala.jpeg" alt="ZOO" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">I love going to the zoo!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/sushi.jpeg" alt="Sushi" class="about-img">
+                        <div class="image-overlay">I love eating Sushi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="image-wrapper">
+                        <img src="assets/images/suess.jpeg" alt="Art museum" class="about-img">
+                        <div class="image-overlay">
+                            <p class="image-description">I like going to art museums sometimes.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-button next" aria-label="Next image">&#8594;</button>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="content">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="assets/images/hoth.png" alt="hoth">
+                    <div class="project-info">
+                        <h3>Healthy on the Hill</h3>
+                        <p>Dining hall and Gym tracker for UCLA students, and a way to find friends to eat and workout with</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>GoLang</span>
+                        </div>
+                        <a href="https://github.com/sveld03/cs35l_project" target="_blank" class="github-link">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/stairmaster.png" alt="StairMasters">
+                    <div class="project-info">
+                        <h3>StairMasters IOS App</h3>
+                        <p>IOS app dedicated to helping UCLA students with accessibility issues locate and navigate accessible routes</p>
+                        <div class="project-tags">
+                            <span>Swift</span>
+                            <span>iOS</span>
+                        </div>
+                        <a href="https://github.com/AnthonyChui/NovaStairMasters" target="_blank" class="github-link">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/image.png" alt="Marble Madness">
+                    <div class="project-info">
+                        <h3>Marble Madness Game</h3>
+                        <p>2D video game featuring multiple levels and advanced graphics utilizing OOP principles</p>
+                        <div class="project-tags">
+                            <span>C++</span>
+                            <span>OOP</span>
+                            <span>Game Dev</span>
+                        </div>
+                        <a href="https://github.com/AnthonyChui/marblemadness" target="_blank" class="github-link">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Class Attendance Verifier</h3>
+                        <p>First-prize winning attendance tracking app at HackWithAPro</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Next.js</span>
+                            <span>Google Maps</span>
+                        </div>
+                        <a href="https://github.com/zolinthecow/hackwithapro" target="_blank" class="github-link">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>BruinTour/GPS Navigation</h3>
+                        <p>Automated UCLA tour guide system with custom pathfinding</p>
+                        <div class="project-tags">
+                            <span>C++</span>
+                            <span>Algorithms</span>
+                            <span>Data Structures</span>
+                        </div>
+                        <a href="https://github.com/AnthonyChui/bruintours" target="_blank" class="github-link">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="content">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Nova, Tech For Good</h3>
+                    <div class="experience-location">Los Angeles, CA</div>
+                </div>
+                <div class="experience-subheader">
+                    <div class="experience-title">Software Developer</div>
+                    <div class="experience-date">October 2024 - Present</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Developing impactful software solutions for nonprofits</li>
+                    <li>Working with cross-functional teams on social and environmental challenges</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>ACM TeachLA</h3>
+                    <div class="experience-location">Los Angeles, CA</div>
+                </div>
+                <div class="experience-subheader">
+                    <div class="experience-title">School Lead / Curriculum Developer</div>
+                    <div class="experience-date">December 2023 - Present</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Developing CS curriculum for underrepresented middle school students</li>
+                    <li>Teaching weekly classes at Maywood Elementary</li>
+                    <li>Improving website accessibility and user experience</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>UCLA Elegant Mind Club</h3>
+                    <div class="experience-location">Los Angeles, CA</div>
+                </div>
+                <div class="experience-subheader">
+                    <div class="experience-title">Machine Learning Research Assistant</div>
+                    <div class="experience-date">August 2024 - December 2024</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Developing 3D to 2D mapping systems using neural networks</li>
+                    <li>Working on autonomous vehicle collision prevention</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Upsilon Pi Epsilon (Computer Science Honor Society)</h3>
+                    <div class="experience-location">Los Angeles, CA</div>
+                </div>
+                <div class="experience-subheader">
+                    <div class="experience-title">Volunteer Tutor</div>
+                    <div class="experience-date">March 2024 - December 2024</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Deliver tailored tutoring in math, physics, and computer science, empowering students to excel academically and think critically</li>
+                    <li>Foster a collaborative learning culture where curiosity thrives, creating a network of peers who support each other's growth</li>
+                    <li>Inspire confidence and technical mastery, helping students see beyond grades to lifelong skills and discovery</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>UCLA Learning Assistant Program</h3>
+                    <div class="experience-location">Los Angeles, CA</div>
+                </div>
+                <div class="experience-subheader">
+                    <div class="experience-title">Introduction to Computer Organization Learning Assistant</div>
+                    <div class="experience-date">September 2024 - December 2024</div>
+                </div>
+                <ul class="experience-description">
+                    <li>Support students in mastering computer science concepts, transforming complex topics like system architecture and assembly language into approachable, engaging material</li>
+                    <li>Provide individualized guidance during office hours, empowering students to build confidence and develop a deep understanding of the subject</li>
+                    <li>Collaborated closely with course instructors to create innovative materials that promote active learning and foster a collaborative, inclusive classroom environment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!--<section id="blog">
+        <div class="content">
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <h3>Understanding React Hooks</h3>
+                    <p class="date">March 15, 2024</p>
+                    <p>A deep dive into React Hooks and their practical applications...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Modern CSS Techniques</h3>
+                    <p class="date">March 1, 2024</p>
+                    <p>Exploring the latest CSS features and best practices...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>API Design Patterns</h3>
+                    <p class="date">February 15, 2024</p>
+                    <p>Best practices for designing scalable APIs...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+
+    <section id="contact">
+        <div class="content">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-form">
+                <form action="mailto:anthony.chui05@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <p>Email: anthony.chui05@gmail.com</p>
+                <p>Location: Los Angeles, CA</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/anthony-chui-499b31274/" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/AnthonyChui" target="_blank">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                    </a>
+                    <a href="https://www.instagram.com/asap.chui/" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Animation on scroll
+            gsap.from("section", {
+                opacity: 0,
+                y: 20,
+                duration: 1,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: "section",
+                    start: "top center",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+    </script>
+</body>
+</html>
