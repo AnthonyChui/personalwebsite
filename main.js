@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hero section animation
     gsap.from('.hero-content > *', {
         opacity: 0,
-        y: 50,
-        duration: 1,
+        y: 30,
+        duration: 1.2,
         stagger: 0.2,
-        delay: 0.5
+        ease: "power3.out"
     });
 
     // Batch animations for better performance
@@ -105,12 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 onEnter: batch => gsap.to(batch, {
                     opacity: 1,
                     ...animation.vars,
-                    duration: 0.8,
-                    stagger: 0.15,
+                    duration: 1,
+                    stagger: 0.1,
                     x: 0,
                     y: 0,
-                    overwrite: true,
-                    ease: "power2.out"
+                    ease: "power3.out"
                 }),
                 onLeave: batch => gsap.set(batch, {
                     opacity: 0,
@@ -119,12 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 onEnterBack: batch => gsap.to(batch, {
                     opacity: 1,
                     ...animation.vars,
-                    duration: 0.8,
-                    stagger: 0.15,
+                    duration: 1,
+                    stagger: 0.1,
                     x: 0,
                     y: 0,
-                    overwrite: true,
-                    ease: "power2.out"
+                    ease: "power3.out"
                 }),
                 onLeaveBack: batch => gsap.set(batch, {
                     opacity: 0,
@@ -230,4 +228,78 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add click event to home section
     homeSection.addEventListener('click', cycleBackground);
+
+    // Particle effect configuration
+    particlesJS('particles-js', {
+        particles: {
+            number: {
+                value: 80,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: '#ffffff'
+            },
+            shape: {
+                type: 'circle'
+            },
+            opacity: {
+                value: 0.5,
+                random: false
+            },
+            size: {
+                value: 3,
+                random: true
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ffffff',
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: 'grab'
+                },
+                onclick: {
+                    enable: true,
+                    mode: 'push'
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 1
+                    }
+                },
+                push: {
+                    particles_nb: 4
+                }
+            }
+        },
+        retina_detect: true
+    });
 }); 

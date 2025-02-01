@@ -1,4 +1,10 @@
 :root {
+    --primary: #2D3436;
+    --secondary: #636E72;
+    --accent: #0984E3;
+    --background: #FFFFFF;
+    --text: #2D3436;
+    --light-gray: #F1F2F6;
     --orange-primary: #F27F0C;
     --orange-secondary: #F7AD19;
     --blue-light: #9FE7F5;
@@ -32,16 +38,16 @@ html {
 
 nav {
     position: fixed;
-    top: 20px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: auto;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 0.5rem 2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
     z-index: 1000;
-    border-radius: 50px;
-    backdrop-filter: blur(10px);
+    border-radius: 0;
+    backdrop-filter: blur(8px);
 }
 
 .nav-content {
@@ -84,10 +90,12 @@ nav {
 }
 
 .nav-links a {
-    font-size: 1.1rem;
-    text-decoration: none;
-    color: var(--blue-dark);
+    font-size: 0.95rem;
     font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--primary);
+    text-decoration: none;
     padding: 0.5rem 1rem;
     position: relative;
     z-index: 1;
@@ -102,10 +110,11 @@ nav {
 section {
     min-height: 100vh;
     height: auto;
-    padding: 0 2rem;
+    padding: 6rem 2rem;
     opacity: 1;
     margin: 0;
     position: relative;
+    background: var(--background);
 }
 
 .content {
@@ -133,6 +142,8 @@ section#home {
     transition: opacity 0.3s ease;
     margin: 0;
     height: 100vh;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Add a hint for users */
@@ -213,11 +224,12 @@ section#about {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 2rem;
-    letter-spacing: -0.5px;
-    color: var(--orange-primary);
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 section#home .section-title,
@@ -269,19 +281,21 @@ section#contact {
 }
 
 .project-card {
-    background: white;
-    border-radius: 10px;
+    background: var(--light-gray);
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 1;
     height: 100%; /* Ensure consistent height */
     display: flex;
     flex-direction: column;
+    border: none;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-card img {
@@ -315,8 +329,13 @@ section#contact {
     max-width: 81%;
     border-radius: 12px;
     background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .experience-header {
@@ -375,10 +394,17 @@ section#contact {
 
 input, textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 2px solid var(--blue-light);
-    border-radius: 5px;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
     font-size: 1rem;
+    background: var(--light-gray);
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent);
+    outline: none;
 }
 
 textarea {
@@ -432,11 +458,11 @@ textarea {
 }
 
 .project-tags span {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    color: var(--blue-dark);
+    background: rgba(9, 132, 227, 0.1);
+    color: var(--accent);
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
 }
 
 .blog-grid {
@@ -507,19 +533,19 @@ textarea {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    background: linear-gradient(135deg, var(--orange-primary), var(--orange-secondary));
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    background: var(--accent);
     color: white !important;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(242, 127, 12, 0.2);
+    box-shadow: none;
 }
 
 .resume-download:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(242, 127, 12, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     background: linear-gradient(135deg, var(--orange-secondary), var(--orange-primary));
     color: white !important;
 }
@@ -594,9 +620,9 @@ textarea {
     position: relative;
     width: 100%;
     height: 250px;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
     transition: transform 0.3s ease;
 }
 
@@ -643,10 +669,10 @@ textarea {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background: var(--accent);
     border: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -656,6 +682,7 @@ textarea {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    color: white;
 }
 
 .carousel-button:hover {
@@ -827,4 +854,17 @@ section:not(#home) {
         grid-template-columns: 1fr;
         padding: 0 1rem;
     }
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
 } 
