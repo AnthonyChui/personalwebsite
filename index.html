@@ -6,6 +6,7 @@
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <nav>
@@ -345,18 +346,18 @@
         <div class="content">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-form">
-                <form action="mailto:anthony.chui05@gmail.com" method="post" enctype="text/plain">
+                <form id="contact-form">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="text" name="name" id="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="email" name="email" id="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject">
+                        <input type="text" name="subject" id="subject" placeholder="Subject">
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <textarea name="message" id="message" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
