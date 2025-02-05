@@ -309,36 +309,32 @@ document.addEventListener('DOMContentLoaded', () => {
 // Contact form submission
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    
+    console.log('Form submitted');
     // Show loading state
     const submitButton = this.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
-
-    // Get form data
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         subject: document.getElementById('subject').value,
         message: document.getElementById('message').value
     };
+    console.log('Form data:', formData);
 
-    // Send email using EmailJS
     emailjs.send('service_uy48znv', 'template_xu0j88g', formData)
-        .then(function(response) {
-            // Show success message
-            alert('Message sent successfully!');
-            // Reset form
-            event.target.reset();
-        }, function(error) {
-            // Show error message
-            alert('Failed to send message. Please try again.');
-            console.error('EmailJS error:', error);
-        })
-        .finally(() => {
-            // Reset button state
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        });
+    .then(response => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Message sent successfully!');
+    })
+    .catch(error => {
+        console.error('FAILED...', error);
+        alert('Failed to send message. Please try again.');
+    })
+    .finally(() => {
+        // Reset button state
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    });
 });
