@@ -323,7 +323,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     };
     console.log('Form data:', formData);
 
-    emailjs.send('service_uy48znv', 'template_xu0j88g', formData)
+    emailjs.send('service_dy8whz5', 'template_xu0j88g', formData)
     .then(response => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Message sent successfully!');
