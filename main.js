@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Initialize EmailJS
 (function() {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Add your EmailJS public key here
+    emailjs.init("Z_nYm8iELKoJ9_bNE"); // Add your EmailJS public key here
 })();
 
 // Contact form submission
@@ -325,7 +325,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     };
 
     // Send email using EmailJS
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+    emailjs.send('service_uy48znv', 'template_xu0j88g', formData)
         .then(function(response) {
             // Show success message
             alert('Message sent successfully!');
